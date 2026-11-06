@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PomoBrain</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>🧠 PomoBrain</h1>
+        <!-- Navegação apontando para os outros arquivos HTML -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Timer</a></li>
+                <li><a href="metodo.html">Como Funciona</a></li>
+                <li><a href="faq.html">Vantagens & FAQ</a></li>
+                <li><a href="Login.html">Login ou Cadastro</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Bloco do Cronômetro -->
+        <section class="timer-container">
+            <h2>Seu Foco</h2>
+            <div class="modos-pomodoro">
+                <button id="btn-foco">Foco (25m)</button>
+                <button id="btn-pausa-curta">Pausa Curta (5m)</button>
+                <button id="btn-pausa-longa">Pausa Longa (15m)</button>
+            </div>
+            <div class="display-tempo" id="tempo">25:00</div>
+            <div class="controles">
+                <button id="btn-iniciar">Iniciar</button>
+                <button id="btn-pausar">Pausar</button>
+                <button id="btn-zerar">Zerar</button>
+            </div>
+        </section>
+
+        <!-- Bloco de Tarefas (Conectado ao modelo lógico TAREFA) -->
+        <!-- Bloco de Tarefas e Histórico -->
+        <section class="tarefas-container">
+            <h3>Tarefas e Histórico</h3>
+
+            <!-- Caixa para agrupar o campo de digitar e o botão -->
+            <div class="input-grupo">
+                <input type="text" id="nova-tarefa" placeholder="O que você vai focar agora?">
+                <button id="btn-add-tarefa">Adicionar</button>
+            </div>
+
+            <!-- Lista vazia onde o JavaScript vai injetar as tarefas criadas -->
+            <ul id="lista-tarefas">
+                <!-- As tarefas vão aparecer aqui dentro via JavaScript -->
+            </ul>
+            <div class="config-sessoes">
+                <label for="total-sessoes">Meta de Sessões:</label>
+                <input type="number" id="total-sessoes" min="1" value="4">
+
+            </div>
+        </section>
+
+        <!-- Bloco de Música (Conectado ao modelo lógico MIDIA_AUDIO) -->
+        <section class="musica-container">
+            <h3>Música para Focar</h3>
+            <input type="url" id="url-musica" placeholder="Cole a URL de música aqui">
+            <input type="file" id="arquivo-musica" accept="audio/*">
+            <button id="btn-add-musica">Adicionar Música</button>
+        </section>
+    </main>
+
+</body>
+
+</html>

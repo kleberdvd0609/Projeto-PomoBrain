@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Tiny5+Duo:ital,wght@0,100..900;1,100..900&display=swap');@charset "UTF-8";
+
+
+* {
+    font-family: 'Black Ops One', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ /* CORPO DA PÁGINA - Fundo escuro para não cansar a vista durante os estudos */
+body {
+    background-image: linear-gradient(90deg, #203F5C, #2b6c6e, #173B47);
+    color: #080a3b;
+    line-height: 1.6;
+}
+.timer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+/* CABEÇALHO E MENU - Alinhados usando Flexbox */
+header {
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+header h1 {
+    font-size: 2.5rem;
+    color: #080a3b;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+nav ul li a {
+    text-decoration: none;
+    font-size: 1rem;
+}
+main {
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+}
+
+.display-tempo {
+    font-size: 8rem;
+    font-weight: bold;
+    color: #07041e;
+    margin: 20px 0;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #817f84;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+
+
+}
+button:hover {
+    background-color: #6b696d;
+}
+button:active {
+    background-color: #5a585c;
+    transform: scale(0.95);
+}
+
+input[type="text"], input[type="url"] {
+    width: 70%;
+    padding: 7px;
+    margin-top: 1px;
+    border-radius: 15px;
+    border: 1px solid #444;
+    background-color: #2c2c2c;
+    color: rgb(10, 7, 7);
+}
+
+input[type="text"], input[type="url"]::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+input[type="file"], input[type="submit"] {
+    padding: 5px;
+    border-radius: 15px;
+    border: none;
+    background-color: #817f84;
+    color: #4d4c4e;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#btn-add-musica {
+    margin-top: 10px;
+    background-color: #817f84;
+    color: #000000;
+    border: none;
+    border-radius: 15px;
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="number"] {
+    width: 40px;
+    padding: 5px;
+    border-radius: 20px;
+    border: 2px solid #fdfdfd;
+    background-color: #4d4d4d;
+    color: #000000;
+}
+#total-sessoes::-webkit-inner-spin-button,
+#total-sessoes::-webkit-outer-spin-button {
+  opacity: 1; /* Garante que as setas não fiquem ocultas ou transparentes */
+  filter: invert(1) brightness(25); /* Inverte a cor padrão das setas para ficarem escuras sobre o fundo claro do input */
+  height: 32px;
+  cursor: pointer;
+
+}
