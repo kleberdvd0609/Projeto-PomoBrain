@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PomoBrain - Acesso</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho da página -->
+      <header>
+        <h1>🧠 PomoBrain</h1>
+        <!-- Navegação apontando para os outros arquivos HTML -->
+        <nav aria-label="Navegação principal">
+            <ul>
+                <li><a href="index.html" aria-label="Navegação para a página de Timer">Timer</a></li>
+                <li><a href="metodo.html" aria-label="Navegação para a página 'Como Funciona'">Como Funciona</a></li>
+                <li><a href="faq.html" aria-label="Navegação para a página 'Vantagens & FAQ'">Vantagens & FAQ</a></li>
+                <li><a href="login.html" aria-label="Página de Login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main>
+        
+        <!-- Seção de Login -->
+        <section id="secao-login">
+            <h2>Entrar na sua conta</h2>
+            
+            <form action="index.html" method="get">
+                <fieldset>
+                    <legend>Dados de Acesso</legend>
+                    
+                    <div>
+                        <label for="email-login">E-mail:</label>
+                        <input type="email" id="email-login" required autocomplete="email">
+                        
+                    </div>
+                    
+                    <br>
+
+                    <div>
+                        <label for="senha-login">Senha:</label>
+                        <input type="password" id="senha-login" required autocomplete="current-password">
+                    </div>
+                </fieldset>
+                
+                <br>
+                <button type="submit">Entrar</button>
+            </form>
+
+        </section>
+
+        <hr>
+
+
+        
+
+    </main>
+
+    <!-- Rodapé da página -->
+    <footer>
+        <p>&copy; 2026 PomoBrain.</p>
+    </footer>
+
+</body>
+</html>

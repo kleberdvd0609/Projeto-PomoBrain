@@ -1,136 +1,197 @@
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Tiny5+Duo:ital,wght@0,100..900;1,100..900&display=swap');@charset "UTF-8";
-
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Tiny5+Duo:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
-    font-family: 'Black Ops One', cursive;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: "Black Ops One", cursive; /* Define a fonte padrão da página. */
+    margin: 0; /* Remove a margem padrão dos elementos. */
+    padding: 0; /* Remove o espaçamento interno padrão dos elementos. */
+    box-sizing: border-box; /* Inclui bordas e preenchimento no tamanho total dos elementos. */
 }
- /* CORPO DA PÁGINA - Fundo escuro para não cansar a vista durante os estudos */
+
+/* Corpo da página: aplica um fundo escuro para a área de estudo. */
 body {
-    background-image: linear-gradient(90deg, #203F5C, #2b6c6e, #173B47);
-    color: #080a3b;
-    line-height: 1.6;
+    background-image: linear-gradient(90deg, #203f5c, #2b6c6e, #173b47); /* Cria um degradê horizontal no fundo. */
+    color: #080a3b; /* Define a cor padrão do texto. */
+    line-height: 1.3; /* Define a altura das linhas para melhorar a leitura. */
+    max-width: 100%;
+    min-height: 100vh; /* Garante que o corpo ocupe pelo menos a altura da tela. */
+    display: flex; /* Organiza cabeçalho, conteúdo e rodapé em coluna. */
+    flex-direction: column; /* Mantém os elementos principais na ordem vertical. */
 }
+
 .timer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+    display: flex; /* Organiza os elementos internos com Flexbox. */
+    flex-direction: column; /* Empilha os elementos na vertical. */
+    align-items: center; /* Centraliza os elementos horizontalmente. */
+    justify-content: center; /* Centraliza os elementos verticalmente. */
+    gap: 5px; /* Define o espaço entre os elementos internos. */
+
 }
 
-
-/* CABEÇALHO E MENU - Alinhados usando Flexbox */
+/* Cabeçalho e menu: distribui os itens em uma linha. */
 header {
-    padding: 20px 40px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
+    background: rgba(8, 10, 59, 0.18); /* Adiciona um fundo escuro semitransparente. */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Separa o cabeçalho do conteúdo. */
+    padding: 20px 40px; /* Define o espaçamento interno do cabeçalho. */
+    display: flex; /* Organiza os itens do cabeçalho com Flexbox. */
+    flex-direction: row; /* Posiciona os itens do cabeçalho em uma linha. */
+    justify-content: space-between; /* Distribui os itens com espaço entre eles. */
+    align-items: center; /* Alinha os itens verticalmente ao centro. */
 }
+
 header h1 {
-    font-size: 2.5rem;
-    color: #080a3b;
+    font-size: 2.5rem; /* Define o tamanho do título do cabeçalho. */
+    color: #ffffff; /* Define a cor do título como branca. */
 }
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-nav ul li a {
-    text-decoration: none;
-    font-size: 1rem;
-}
-main {
-    padding: 40px;
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
 
+nav ul {
+    list-style: none; /* Remove os marcadores da lista de navegação. */
+    display: flex; /* Exibe os itens da navegação em uma linha. */
+    gap: 18px; /* Define o espaço entre os itens da navegação. */
+    align-items: center; /* Alinha os links ao centro. */
+}
+
+nav a {
+    display: block; /* Faz toda a área do link ser clicável. */
+    text-decoration: none; /* Remove o sublinhado dos links. */
+    font-size: 1rem; /* Define o tamanho da fonte dos links. */
+    color: #ffffff; /* Define a cor dos links como branca. */
+    padding: 8px 12px; /* Mantém o espaçamento interno igual em todos os links. */
+    border-radius: 8px; /* Arredonda os cantos dos links. */
+    transition: background-color 0.2s ease; /* Suaviza o destaque ao interagir. */
+}
+
+nav a:hover,
+nav a:focus-visible {
+    background-color: rgba(255, 255, 255, 0.18); /* Destaca o link ao passar o mouse ou navegar pelo teclado. */
+}
+
+@media (max-width: 640px) {
+    header {
+        flex-direction: column; /* Empilha o título e a navegação em telas estreitas. */
+        gap: 16px; /* Separa o título do menu. */
+        padding: 20px; /* Reduz o espaçamento lateral em telas estreitas. */
+    }
+
+    nav ul {
+        flex-wrap: wrap; /* Permite que os links ocupem mais de uma linha em telas pequenas. */
+        justify-content: center; /* Centraliza os links quando houver quebra de linha. */
+        gap: 8px; /* Reduz o espaço entre os links em telas pequenas. */
+    }
+}
+
+main {
+    flex: 1; /* Ocupa o espaço livre e empurra o rodapé para baixo. */
+    padding: 40px; /* Define o espaçamento interno do conteúdo principal. */
+    max-width: 800px; /* Limita a largura máxima do conteúdo. */
+    margin: 0 auto; /* Centraliza o conteúdo horizontalmente. */
+    display: flex; /* Organiza as seções do conteúdo com Flexbox. */
+    flex-direction: column; /* Empilha as seções verticalmente. */
+    gap: 40px; /* Define o espaço entre as seções. */
 }
 
 .display-tempo {
-    font-size: 8rem;
-    font-weight: bold;
-    color: #07041e;
-    margin: 20px 0;
-    letter-spacing: 5px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 8rem; /* Define o tamanho dos números do temporizador. */
+    font-weight: bold; /* Exibe os números do temporizador em negrito. */
+    color: #07041e; /* Define a cor dos números do temporizador. */
+    margin: 20px 0; /* Define o espaço externo acima e abaixo do temporizador. */
+    letter-spacing: 5px; /* Define o espaço entre os caracteres do temporizador. */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra ao texto. */
 }
+
 button {
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    background-color: #817f84;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin: 5px;
-
-
+    padding: 10px 20px; /* Define o espaçamento interno dos botões. */
+    font-size: 1.2rem; /* Define o tamanho do texto dos botões. */
+    background-color: #817f84; /* Define a cor de fundo dos botões. */
+    border: none; /* Remove a borda padrão dos botões. */
+    border-radius: 15px; /* Arredonda os cantos dos botões. */
+    cursor: pointer; /* Mostra o cursor de clique sobre os botões. */
+    transition: background-color 0.3s ease; /* Suaviza a mudança da cor de fundo. */
+    margin: 10px; /* Define o espaço externo ao redor dos botões. */
 }
+
 button:hover {
-    background-color: #6b696d;
+    background-color: #6b696d; /* Escurece o fundo do botão ao passar o cursor. */
 }
+
 button:active {
-    background-color: #5a585c;
-    transform: scale(0.95);
+    background-color: #5a585c; /* Escurece o fundo do botão enquanto ele é pressionado. */
+    transform: scale(0.95); /* Reduz ligeiramente o botão enquanto ele é pressionado. */
 }
 
-input[type="text"], input[type="url"] {
-    width: 70%;
-    padding: 7px;
-    margin-top: 1px;
-    border-radius: 15px;
-    border: 1px solid #444;
-    background-color: #2c2c2c;
-    color: rgb(10, 7, 7);
+input[type="text"],
+input[type="url"] {
+    width: 70%; /* Define a largura dos campos de texto e URL. */
+    padding: 7px; /* Define o espaçamento interno dos campos. */
+    margin-top: 1px; /* Define o espaço acima dos campos. */
+    border-radius: 15px; /* Arredonda os cantos dos campos. */
+    border: 1px solid #444; /* Define a borda dos campos. */
+    background-color: #2c2c2c; /* Define a cor de fundo dos campos. */
+    color: #ffffff; /* Define a cor do texto digitado nos campos. */
 }
 
-input[type="text"], input[type="url"]::placeholder {
-    color: #aaa;
-    font-style: italic;
+input[type="text"],
+input[type="url"]::placeholder {
+    color: #aaa; /* Define a cor do texto de orientação do campo. */
+    font-style: italic; /* Exibe o texto de orientação em itálico. */
 }
 
-input[type="file"], input[type="submit"] {
-    padding: 5px;
-    border-radius: 15px;
-    border: none;
-    background-color: #817f84;
-    color: #4d4c4e;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+input[type="file"],
+input[type="submit"] {
+    padding: 5px; /* Define o espaçamento interno dos controles de arquivo e envio. */
+    border-radius: 15px; /* Arredonda os cantos dos controles. */
+    border: none; /* Remove a borda padrão dos controles. */
+    background-color: #817f84; /* Define a cor de fundo dos controles. */
+    color: #4d4c4e; /* Define a cor do texto dos controles. */
+    cursor: pointer; /* Mostra o cursor de clique sobre os controles. */
+    transition: background-color 0.3s ease; /* Suaviza a mudança da cor de fundo. */
 }
 
 #btn-add-musica {
-    margin-top: 10px;
-    background-color: #817f84;
-    color: #000000;
-    border: none;
-    border-radius: 15px;
-    padding: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin-top: 10px; /* Define o espaço acima do botão de adicionar música. */
+    background-color: #817f84; /* Define a cor de fundo do botão. */
+    color: #000000; /* Define a cor do texto do botão. */
+    border: none; /* Remove a borda do botão. */
+    border-radius: 15px; /* Arredonda os cantos do botão. */
+    padding: 5px; /* Define o espaçamento interno do botão. */
+    cursor: pointer; /* Mostra o cursor de clique sobre o botão. */
+    transition: background-color 0.3s ease; /* Suaviza a mudança da cor de fundo. */
 }
 
 input[type="number"] {
-    width: 40px;
-    padding: 5px;
-    border-radius: 20px;
-    border: 2px solid #fdfdfd;
-    background-color: #4d4d4d;
-    color: #000000;
+    width: 40px; /* Define a largura do campo numérico. */
+    padding: 5px; /* Define o espaçamento interno do campo numérico. */
+    border-radius: 20px; /* Arredonda os cantos do campo numérico. */
+    border: 2px solid #fdfdfd; /* Define a borda clara do campo numérico. */
+    background-color: #4d4d4d; /* Define a cor de fundo do campo numérico. */
+    color: #000000; /* Define a cor do valor digitado. */
 }
+
 #total-sessoes::-webkit-inner-spin-button,
 #total-sessoes::-webkit-outer-spin-button {
-  opacity: 1; /* Garante que as setas não fiquem ocultas ou transparentes */
-  filter: invert(1) brightness(25); /* Inverte a cor padrão das setas para ficarem escuras sobre o fundo claro do input */
-  height: 32px;
-  cursor: pointer;
+    opacity: 1; /* Mantém as setas do campo numérico visíveis. */
+    filter: invert(1) brightness(25); /* Ajusta a cor das setas para contrastar com o fundo claro. */
+    height: 32px; /* Define a altura das setas do campo numérico. */
+    cursor: pointer; /* Mostra o cursor de clique sobre as setas. */
+}
 
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 2px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    margin: auto;
+}
+
+footer {
+    background: rgba(8, 10, 59, 0.18); /* Adiciona um fundo escuro semitransparente ao rodapé. */
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Separa o rodapé do conteúdo. */
+    padding: 2px 4px; /* Define o espaçamento interno do rodapé. */
+    text-align: center; /* Centraliza o texto do rodapé. */
+    color: #ffffff; /* Define a cor do texto do rodapé como branca. */
+    box-sizing: border-box; /* Inclui bordas e preenchimento no tamanho total do rodapé. */
+    
 }

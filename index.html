@@ -12,23 +12,22 @@
     <header>
         <h1>🧠 PomoBrain</h1>
         <!-- Navegação apontando para os outros arquivos HTML -->
-        <nav>
+        <nav aria-label="Navegação principal">
             <ul>
-                <li><a href="index.html">Timer</a></li>
-                <li><a href="metodo.html">Como Funciona</a></li>
-                <li><a href="faq.html">Vantagens & FAQ</a></li>
-                <li><a href="Login.html">Login ou Cadastro</a></li>
+                <li><a href="index.html" aria-label="Navegação para a página de Timer">Timer</a></li>
+                <li><a href="metodo.html" aria-label="Navegação para a página 'Como Funciona'">Como Funciona</a></li>
+                <li><a href="faq.html" aria-label="Navegação para a página 'Vantagens & FAQ'">Vantagens & FAQ</a></li>
+                <li><a href="login.html" aria-label="Navegação para a página de Login ou Cadastro">Login</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <!-- Bloco do Cronômetro -->
         <section class="timer-container">
-            <h2>Seu Foco</h2>
+            <h2>Mais foco, menos ansiedade.</h2>
             <div class="modos-pomodoro">
                 <button id="btn-foco">Foco (25m)</button>
                 <button id="btn-pausa-curta">Pausa Curta (5m)</button>
-                <button id="btn-pausa-longa">Pausa Longa (15m)</button>
             </div>
             <div class="display-tempo" id="tempo">25:00</div>
             <div class="controles">
@@ -63,11 +62,14 @@
         <!-- Bloco de Música (Conectado ao modelo lógico MIDIA_AUDIO) -->
         <section class="musica-container">
             <h3>Música para Focar</h3>
-            <input type="url" id="url-musica" placeholder="Cole a URL de música aqui">
             <input type="file" id="arquivo-musica" accept="audio/*">
             <button id="btn-add-musica">Adicionar Música</button>
         </section>
     </main>
+    <!-- Rodapé da página -->
+    <footer>
+        <p>&copy; 2026 PomoBrain.</p>
+    </footer>
 
 </body>
 
