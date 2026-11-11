@@ -9,27 +9,27 @@
 <body>
 
     <!-- Cabeçalho da página -->
-      <header>
-        <h1>🧠 PomoBrain</h1>
+      <div class="cabecalho" role="banner">
+        <h1 class="titulo-principal">🧠 PomoBrain</h1>
         <!-- Navegação apontando para os outros arquivos HTML -->
-        <nav aria-label="Navegação principal">
-            <ul>
-                <li><a href="index.html" aria-label="Navegação para a página de Timer">Timer</a></li>
-                <li><a href="metodo.html" aria-label="Navegação para a página 'Como Funciona'">Como Funciona</a></li>
-                <li><a href="faq.html" aria-label="Navegação para a página 'Vantagens & FAQ'">Vantagens & FAQ</a></li>
-                <li><a href="login.html" aria-label="Página de Login">Login</a></li>
+        <div class="navegacao" role="navigation" aria-label="Navegação principal">
+            <ul class="lista-navegacao">
+                <li class="item-navegacao"><a class="link-navegacao" href="index.html" aria-label="Navegação para a página de Timer">Timer</a></li>
+                <li class="item-navegacao"><a class="link-navegacao" href="metodo.html" aria-label="Navegação para a página 'Como Funciona'">Como Funciona</a></li>
+                <li class="item-navegacao"><a class="link-navegacao" href="faq.html" aria-label="Navegação para a página 'Vantagens & FAQ'">Vantagens & FAQ</a></li>
+                <li class="item-navegacao"><a class="link-navegacao" href="login.html" aria-label="Página de Login">Login</a></li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </div>
 
     <!-- Conteúdo principal -->
-    <main>
+    <div class="pagina-principal" role="main">
         
         <!-- Seção de Login -->
-        <section id="secao-login">
-            <h2>Entrar na sua conta</h2>
+        <div class="secao-login" id="secao-login" role="region" aria-labelledby="titulo-login">
+            <h2 id="titulo-login">Entrar na sua conta</h2>
             
-            <form action="index.html" method="get">
+            <form class="formulario-login" action="index.html" method="get">
                 <fieldset>
                     <legend>Dados de Acesso</legend>
                     
@@ -51,19 +51,19 @@
                 <button type="submit">Entrar</button>
             </form>
 
-        </section>
+        </div>
 
-        <hr>
+        <div class="divisor-conteudo" role="separator" aria-orientation="horizontal"></div>
 
 
         
 
-    </main>
+    </div>
 
     <!-- Rodapé da página -->
-    <footer>
-        <p>&copy; 2026 PomoBrain.</p>
-    </footer>
+    <div class="rodape" role="contentinfo">
+        <p class="texto-rodape">&copy; 2026 PomoBrain.</p>
+    </div>
 
 </body>
 </html>

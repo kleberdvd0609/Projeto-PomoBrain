@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,67 +7,90 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>🧠 PomoBrain</h1>
-        <nav aria-label="Navegação principal">
-            <ul>
-                <li><a href="index.html">Timer</a></li>
-                <li><a href="metodo.html">Como Funciona</a></li>
-                <li><a href="faq.html">Vantagens & FAQ</a></li>
-                <li><a href="login.html">Login</a></li>
+    <div class="cabecalho" role="banner">
+        <h1 class="titulo-principal">🧠 PomoBrain</h1>
+        <div class="navegacao" role="navigation" aria-label="Navegação principal">
+            <ul class="lista-navegacao">
+                <li class="item-navegacao"><a class="link-navegacao" href="index.html">Timer</a></li>
+                <li class="item-navegacao"><a class="link-navegacao" href="metodo.html">Como Funciona</a></li>
+                <li class="item-navegacao"><a class="link-navegacao" href="faq.html">Vantagens & FAQ</a></li>
+                <li class="item-navegacao"><a class="link-navegacao" href="login.html">Login</a></li>
             </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>O Diferencial do PomoBrain</h2>
-            <p>Diferente de cronômetros comuns, o PomoBrain integra o seu histórico de tarefas, permitindo saber exatamente o que está pendente e o que foi concluído. Além disso, o player de música embutido evita que você perca o foco trocando de abas no navegador.</p>
-        </section>
-
-        <section>
-            <h2>Perguntas Frequentes</h2>
-
-            <!-- Tags details e summary para criar o menu clicável sem precisar de JavaScript -->
-            <details>
-                <summary>Posso alterar a URL da música durante a sessão?</summary>
-                <p>Sim! Você pode trocar o link da música ou fazer o upload de um novo arquivo a qualquer momento sem interromper o seu timer de foco.</p>
-            </details>
-
-            <details>
-                <summary>Como o histórico de tarefas é salvo?</summary>
-                <p>As tarefas são vinculadas às suas sessões de estudo. Quando você marca uma tarefa como concluída, o PomoBrain registra o esforço gerado (como definimos no nosso modelo de banco de dados).</p>
-            </details>
-
-            <details>
-                <summary>A pausa começa automaticamente?</summary>
-                <p>De acordo com a configuração estruturada, você poderá escolher se prefere que a pausa inicie de forma automática ou manual após os 25 minutos.</p>
-            </details>
-        </section>
-
-        <section id="beneficios">
-            <h2>Principais Benefícios</h2>
+        </div>
+    </div>
+    <div class="pagina-principal" role="main">
+        <section class="secao-conteudo secao-beneficios" id="beneficios" role="region" aria-labelledby="titulo-beneficios">
+            <h2 id="titulo-beneficios">Benefícios do método Pomodoro</h2>
             <div class="benefits-grid">
-                <div class="card">
-                    <h3>Superação da Procrastinação</h3>
-                    <p>O compromisso inicial é de apenas 25 minutos, reduzindo a resistência mental para começar tarefas complexas.</p>
-                </div>
-                <div class="card">
-                    <h3>Redução da Fadiga Mental</h3>
-                    <p>As pausas regulares evitam o esgotamento físico e mental, mantendo o nível de energia estável durante todo o dia.</p>
-                </div>
-                <div class="card">
-                    <h3>Melhoria da Estimativa de Tempo</h3>
-                    <p>Permite entender com precisão quantos blocos de tempo são necessários para concluir cada projeto.</p>
-                </div>
-                <div class="card">
-                    <h3>Foco Ininterrupto</h3>
-                    <p>Treina o cérebro para ignorar distrações externas e pensamentos dispersos durante o período produtivo.</p>
-                </div>
+                <article class="card card-beneficio">
+                    <h3>Comece por uma etapa menor</h3>
+                    <p>Dividir o trabalho em blocos de foco pode tornar mais fácil começar uma tarefa grande.</p>
+                </article>
+                <article class="card card-beneficio">
+                    <h3>Intercale foco e descanso</h3>
+                    <p>As pausas planejadas ajudam a criar um ritmo de trabalho mais equilibrado.</p>
+                </article>
+                <article class="card card-beneficio">
+                    <h3>Planeje melhor as tarefas</h3>
+                    <p>Registrar quantos blocos cada atividade exige pode ajudar a estimar o esforço necessário.</p>
+                </article>
+                <article class="card card-beneficio">
+                    <h3>Reduza as distrações</h3>
+                    <p>Escolher uma tarefa por bloco ajuda a manter a atenção em uma atividade de cada vez.</p>
+                </article>
             </div>
         </section>
-    </main>
-     <footer>
-        <p>&copy; 2026 PomoBrain.</p>
-    </footer>
+
+        <section class="secao-conteudo secao-faq" role="region" aria-labelledby="titulo-faq">
+            <h2 id="titulo-faq">Perguntas Frequentes</h2>
+
+            <div class="faq-categoria">
+                <h3>Cronômetro</h3>
+                <details>
+                    <summary>Quais durações estão disponíveis?</summary>
+                    <p>A tela do timer oferece foco de 25 minutos, pausa curta de 5 minutos e pausa longa de 15 minutos.</p>
+                </details>
+                <details>
+                    <summary>O cronômetro já faz a contagem regressiva?</summary>
+                    <p>A interface mostra os modos e os controles, mas a contagem regressiva ainda não está implementada.</p>
+                </details>
+            </div>
+
+            <div class="faq-categoria">
+                <h3>Tarefas</h3>
+                <details>
+                    <summary>Como marco uma tarefa como concluída?</summary>
+                    <p>Digite a tarefa em um dos campos e marque a caixa ao lado. O texto ficará riscado para indicar a conclusão.</p>
+                </details>
+                <details>
+                    <summary>Minhas tarefas ficam salvas?</summary>
+                    <p>Não. As tarefas são apenas da sessão atual e desaparecem quando você atualiza ou fecha a página.</p>
+                </details>
+            </div>
+
+            <div class="faq-categoria">
+                <h3>Música</h3>
+                <details>
+                    <summary>Como reproduzo os sons de foco?</summary>
+                    <p>Use os controles do player na página Timer para iniciar, pausar ou ajustar o volume. Cada faixa está configurada para repetir.</p>
+                </details>
+                <details>
+                    <summary>Posso escolher uma música do meu dispositivo?</summary>
+                    <p>No momento, a página oferece faixas predefinidas; não há opção para selecionar um arquivo de áudio local.</p>
+                </details>
+            </div>
+
+            <div class="faq-categoria">
+                <h3>Conta</h3>
+                <details>
+                    <summary>O login salva minhas tarefas ou configurações?</summary>
+                    <p>A tela de login ainda não está conectada a um sistema de autenticação ou armazenamento de dados. Por isso, ela não salva tarefas nem configurações.</p>
+                </details>
+            </div>
+        </section>
+    </div>
+    <div class="rodape" role="contentinfo">
+        <p class="texto-rodape">&copy; 2026 PomoBrain.</p>
+    </div>
 </body>
 </html>

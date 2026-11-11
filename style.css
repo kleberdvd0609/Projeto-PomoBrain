@@ -1,197 +1,326 @@
-@charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Tiny5+Duo:ital,wght@0,100..900;1,100..900&display=swap");
+@charset "UTF-8"; /* Permite usar caracteres acentuados nesta folha de estilos. */
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap"); /* Carrega a fonte usada no site. */
 
+/* Define a fonte e o cálculo de tamanho padrão dos elementos. */
 * {
-    font-family: "Black Ops One", cursive; /* Define a fonte padrão da página. */
-    margin: 0; /* Remove a margem padrão dos elementos. */
-    padding: 0; /* Remove o espaçamento interno padrão dos elementos. */
-    box-sizing: border-box; /* Inclui bordas e preenchimento no tamanho total dos elementos. */
+    font-family: "Black Ops One", cursive; /* Aplica a fonte principal em toda a interface. */
+    margin: 0; /* Remove margens padrão do navegador. */
+    padding: 0; /* Remove espaçamentos internos padrão do navegador. */
+    box-sizing: border-box; /* Inclui bordas e espaçamentos no tamanho dos elementos. */
 }
 
-/* Corpo da página: aplica um fundo escuro para a área de estudo. */
+/* Organiza o fundo e as áreas principais da página. */
 body {
-    background-image: linear-gradient(90deg, #203f5c, #2b6c6e, #173b47); /* Cria um degradê horizontal no fundo. */
+    background-image: linear-gradient(90deg, #203f5c, #2b6c6e, #173b47); /* Cria o fundo em degradê. */
     color: #080a3b; /* Define a cor padrão do texto. */
-    line-height: 1.3; /* Define a altura das linhas para melhorar a leitura. */
-    max-width: 100%;
-    min-height: 100vh; /* Garante que o corpo ocupe pelo menos a altura da tela. */
-    display: flex; /* Organiza cabeçalho, conteúdo e rodapé em coluna. */
-    flex-direction: column; /* Mantém os elementos principais na ordem vertical. */
+    line-height: 1.3; /* Controla a distância entre linhas de texto. */
+    min-height: 100vh; /* Faz a página ocupar pelo menos a altura da janela. */
+    display: flex; /* Organiza o conteúdo em uma coluna flexível. */
+    flex-direction: column; /* Posiciona cabeçalho, conteúdo e rodapé em sequência vertical. */
 }
 
+/* Centraliza e empilha os controles do cronômetro. */
 .timer-container {
-    display: flex; /* Organiza os elementos internos com Flexbox. */
-    flex-direction: column; /* Empilha os elementos na vertical. */
-    align-items: center; /* Centraliza os elementos horizontalmente. */
-    justify-content: center; /* Centraliza os elementos verticalmente. */
-    gap: 5px; /* Define o espaço entre os elementos internos. */
-
+    display: flex; /* Ativa o alinhamento flexível dos controles. */
+    flex-direction: column; /* Coloca os controles um abaixo do outro. */
+    align-items: center; /* Centraliza os controles horizontalmente. */
+    justify-content: center; /* Centraliza os controles verticalmente. */
+    gap: 5px; /* Adiciona espaço entre os controles. */
 }
 
-/* Cabeçalho e menu: distribui os itens em uma linha. */
-header {
-    background: rgba(8, 10, 59, 0.18); /* Adiciona um fundo escuro semitransparente. */
+/* Organiza o título e a navegação no cabeçalho. */
+.cabecalho {
+    background: rgba(8, 10, 59, 0.18); /* Aplica um fundo escuro translúcido. */
     border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Separa o cabeçalho do conteúdo. */
-    padding: 20px 40px; /* Define o espaçamento interno do cabeçalho. */
-    display: flex; /* Organiza os itens do cabeçalho com Flexbox. */
-    flex-direction: row; /* Posiciona os itens do cabeçalho em uma linha. */
-    justify-content: space-between; /* Distribui os itens com espaço entre eles. */
-    align-items: center; /* Alinha os itens verticalmente ao centro. */
+    padding: 20px 40px; /* Define o espaço interno do cabeçalho. */
+    display: flex; /* Alinha título e navegação em uma linha. */
+    justify-content: space-between; /* Afasta o título da navegação. */
+    align-items: center; /* Alinha os itens verticalmente. */
 }
 
-header h1 {
-    font-size: 2.5rem; /* Define o tamanho do título do cabeçalho. */
-    color: #ffffff; /* Define a cor do título como branca. */
+/* Destaca o título do site. */
+.titulo-principal {
+    font-size: 2.5rem; /* Define o tamanho do título. */
+    color: #ffffff; /* Exibe o título em branco. */
 }
 
-nav ul {
-    list-style: none; /* Remove os marcadores da lista de navegação. */
-    display: flex; /* Exibe os itens da navegação em uma linha. */
-    gap: 18px; /* Define o espaço entre os itens da navegação. */
-    align-items: center; /* Alinha os links ao centro. */
+/* Exibe os links de navegação em uma linha. */
+.lista-navegacao {
+    list-style: none; /* Remove os marcadores da lista. */
+    display: flex; /* Alinha os links horizontalmente. */
+    gap: 18px; /* Espaça os links. */
+    align-items: center; /* Alinha os links verticalmente. */
 }
 
-nav a {
-    display: block; /* Faz toda a área do link ser clicável. */
-    text-decoration: none; /* Remove o sublinhado dos links. */
-    font-size: 1rem; /* Define o tamanho da fonte dos links. */
-    color: #ffffff; /* Define a cor dos links como branca. */
-    padding: 8px 12px; /* Mantém o espaçamento interno igual em todos os links. */
+/* Define a aparência e a área clicável dos links. */
+.link-navegacao {
+    display: block; /* Torna toda a área interna clicável. */
+    text-decoration: none; /* Remove o sublinhado. */
+    font-size: 1rem; /* Define o tamanho do texto dos links. */
+    color: #ffffff; /* Exibe os links em branco. */
+    padding: 8px 12px; /* Aumenta a área clicável dos links. */
     border-radius: 8px; /* Arredonda os cantos dos links. */
-    transition: background-color 0.2s ease; /* Suaviza o destaque ao interagir. */
+    transition: background-color 0.2s ease; /* Suaviza a mudança de fundo ao interagir. */
 }
 
-nav a:hover,
-nav a:focus-visible {
-    background-color: rgba(255, 255, 255, 0.18); /* Destaca o link ao passar o mouse ou navegar pelo teclado. */
+/* Destaca os links ao passar o mouse ou navegar pelo teclado. */
+.link-navegacao:hover,
+.link-navegacao:focus-visible {
+    background-color: rgba(255, 255, 255, 0.18); /* Aplica um fundo claro translúcido. */
 }
 
+/* Ajusta o cabeçalho e a navegação em telas estreitas. */
 @media (max-width: 640px) {
-    header {
-        flex-direction: column; /* Empilha o título e a navegação em telas estreitas. */
-        gap: 16px; /* Separa o título do menu. */
-        padding: 20px; /* Reduz o espaçamento lateral em telas estreitas. */
+    .cabecalho {
+        flex-direction: column; /* Empilha o título e a navegação. */
+        gap: 16px; /* Separa o título dos links. */
+        padding: 20px; /* Reduz o espaço lateral do cabeçalho. */
     }
 
-    nav ul {
-        flex-wrap: wrap; /* Permite que os links ocupem mais de uma linha em telas pequenas. */
-        justify-content: center; /* Centraliza os links quando houver quebra de linha. */
-        gap: 8px; /* Reduz o espaço entre os links em telas pequenas. */
+    .lista-navegacao {
+        flex-wrap: wrap; /* Permite que os links ocupem mais de uma linha. */
+        justify-content: center; /* Centraliza os links quando eles quebrarem de linha. */
+        gap: 8px; /* Reduz o espaço entre os links. */
     }
 }
 
-main {
-    flex: 1; /* Ocupa o espaço livre e empurra o rodapé para baixo. */
-    padding: 40px; /* Define o espaçamento interno do conteúdo principal. */
-    max-width: 800px; /* Limita a largura máxima do conteúdo. */
+/* Limita e centraliza o conteúdo de todas as páginas. */
+.pagina-principal {
+    flex: 1; /* Ocupa o espaço livre e mantém o rodapé no fim da página. */
+    padding: 40px; /* Adiciona espaço ao redor do conteúdo. */
+    max-width: 800px; /* Evita que o conteúdo fique largo demais. */
     margin: 0 auto; /* Centraliza o conteúdo horizontalmente. */
-    display: flex; /* Organiza as seções do conteúdo com Flexbox. */
-    flex-direction: column; /* Empilha as seções verticalmente. */
-    gap: 40px; /* Define o espaço entre as seções. */
+    display: flex; /* Organiza as seções em coluna. */
+    flex-direction: column; /* Empilha as seções. */
+    gap: 40px; /* Separa as seções. */
 }
 
+/* Destaca o tempo exibido no cronômetro. */
 .display-tempo {
-    font-size: 8rem; /* Define o tamanho dos números do temporizador. */
-    font-weight: bold; /* Exibe os números do temporizador em negrito. */
-    color: #07041e; /* Define a cor dos números do temporizador. */
-    margin: 20px 0; /* Define o espaço externo acima e abaixo do temporizador. */
-    letter-spacing: 5px; /* Define o espaço entre os caracteres do temporizador. */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra ao texto. */
+    font-size: 8rem; /* Aumenta os números do cronômetro. */
+    font-weight: bold; /* Reforça o destaque dos números. */
+    color: #07041e; /* Define a cor do tempo. */
+    margin: 20px 0; /* Separa o tempo dos controles. */
+    letter-spacing: 5px; /* Afasta os caracteres. */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adiciona sombra ao texto. */
 }
 
+/* Define a aparência padrão dos botões. */
 button {
-    padding: 10px 20px; /* Define o espaçamento interno dos botões. */
-    font-size: 1.2rem; /* Define o tamanho do texto dos botões. */
-    background-color: #817f84; /* Define a cor de fundo dos botões. */
-    border: none; /* Remove a borda padrão dos botões. */
-    border-radius: 15px; /* Arredonda os cantos dos botões. */
-    cursor: pointer; /* Mostra o cursor de clique sobre os botões. */
-    transition: background-color 0.3s ease; /* Suaviza a mudança da cor de fundo. */
-    margin: 10px; /* Define o espaço externo ao redor dos botões. */
-}
-
-button:hover {
-    background-color: #6b696d; /* Escurece o fundo do botão ao passar o cursor. */
-}
-
-button:active {
-    background-color: #5a585c; /* Escurece o fundo do botão enquanto ele é pressionado. */
-    transform: scale(0.95); /* Reduz ligeiramente o botão enquanto ele é pressionado. */
-}
-
-input[type="text"],
-input[type="url"] {
-    width: 70%; /* Define a largura dos campos de texto e URL. */
-    padding: 7px; /* Define o espaçamento interno dos campos. */
-    margin-top: 1px; /* Define o espaço acima dos campos. */
-    border-radius: 15px; /* Arredonda os cantos dos campos. */
-    border: 1px solid #444; /* Define a borda dos campos. */
-    background-color: #2c2c2c; /* Define a cor de fundo dos campos. */
-    color: #ffffff; /* Define a cor do texto digitado nos campos. */
-}
-
-input[type="text"],
-input[type="url"]::placeholder {
-    color: #aaa; /* Define a cor do texto de orientação do campo. */
-    font-style: italic; /* Exibe o texto de orientação em itálico. */
-}
-
-input[type="file"],
-input[type="submit"] {
-    padding: 5px; /* Define o espaçamento interno dos controles de arquivo e envio. */
-    border-radius: 15px; /* Arredonda os cantos dos controles. */
-    border: none; /* Remove a borda padrão dos controles. */
-    background-color: #817f84; /* Define a cor de fundo dos controles. */
-    color: #4d4c4e; /* Define a cor do texto dos controles. */
-    cursor: pointer; /* Mostra o cursor de clique sobre os controles. */
-    transition: background-color 0.3s ease; /* Suaviza a mudança da cor de fundo. */
-}
-
-#btn-add-musica {
-    margin-top: 10px; /* Define o espaço acima do botão de adicionar música. */
+    padding: 10px 20px; /* Define o espaço interno do botão. */
+    font-size: 1.2rem; /* Define o tamanho do texto do botão. */
     background-color: #817f84; /* Define a cor de fundo do botão. */
-    color: #000000; /* Define a cor do texto do botão. */
-    border: none; /* Remove a borda do botão. */
-    border-radius: 15px; /* Arredonda os cantos do botão. */
-    padding: 5px; /* Define o espaçamento interno do botão. */
-    cursor: pointer; /* Mostra o cursor de clique sobre o botão. */
-    transition: background-color 0.3s ease; /* Suaviza a mudança da cor de fundo. */
+    border: none; /* Remove a borda padrão. */
+    border-radius: 15px; /* Arredonda os cantos. */
+    cursor: pointer; /* Indica que o botão pode ser clicado. */
+    transition: background-color 0.3s ease; /* Suaviza a mudança de cor. */
+    margin: 10px; /* Separa o botão dos elementos próximos. */
 }
 
-input[type="number"] {
-    width: 40px; /* Define a largura do campo numérico. */
-    padding: 5px; /* Define o espaçamento interno do campo numérico. */
-    border-radius: 20px; /* Arredonda os cantos do campo numérico. */
-    border: 2px solid #fdfdfd; /* Define a borda clara do campo numérico. */
-    background-color: #4d4d4d; /* Define a cor de fundo do campo numérico. */
-    color: #000000; /* Define a cor do valor digitado. */
+/* Escurece o botão quando o cursor está sobre ele. */
+button:hover {
+    background-color: #6b696d; /* Aplica um fundo mais escuro. */
 }
 
-#total-sessoes::-webkit-inner-spin-button,
-#total-sessoes::-webkit-outer-spin-button {
-    opacity: 1; /* Mantém as setas do campo numérico visíveis. */
-    filter: invert(1) brightness(25); /* Ajusta a cor das setas para contrastar com o fundo claro. */
-    height: 32px; /* Define a altura das setas do campo numérico. */
-    cursor: pointer; /* Mostra o cursor de clique sobre as setas. */
+/* Indica visualmente quando o botão está pressionado. */
+button:active {
+    background-color: #5a585c; /* Escurece o fundo durante o clique. */
+    transform: scale(0.95); /* Reduz ligeiramente o botão. */
 }
 
+/* Define o tamanho e o formato dos campos dos formulários. */
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-    width: 100%;
-    padding: 2px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    margin: auto;
+    width: 100%; /* Faz o campo ocupar a largura disponível. */
+    padding: 2px; /* Adiciona um pequeno espaço interno. */
+    border: 1px solid #ccc; /* Delimita o campo com uma borda discreta. */
+    border-radius: 5px; /* Arredonda os cantos do campo. */
+    margin: auto; /* Centraliza o campo no contêiner. */
 }
 
-footer {
-    background: rgba(8, 10, 59, 0.18); /* Adiciona um fundo escuro semitransparente ao rodapé. */
+/* Mantém os campos de tarefa escuros e com texto claro. */
+input[type="text"] {
+    background-color: #2c2c2c; /* Define o fundo escuro dos campos de tarefa. */
+    color: #ffffff; /* Define a cor do texto digitado. */
+}
+
+/* Diferencia o texto de orientação dos campos de tarefa. */
+input[type="text"]::placeholder {
+    color: #aaa; /* Exibe o texto de orientação em cinza claro. */
+    font-style: italic; /* Exibe o texto de orientação em itálico. */
+}
+
+/* Risca a descrição da tarefa quando a caixa correspondente é marcada. */
+.lista-simulada li:has(input[type="checkbox"]:checked) .texto-tarefa {
+    background-image: linear-gradient(transparent 49%, rgba(255, 255, 255, 0.75) 49%, rgba(255, 255, 255, 0.75) 51%, transparent 51%); /* Desenha uma linha sobre o texto da tarefa. */
+}
+
+/* Estiliza o rodapé das páginas. */
+.rodape {
+    background: rgba(8, 10, 59, 0.18); /* Aplica um fundo escuro translúcido. */
     border-top: 1px solid rgba(255, 255, 255, 0.2); /* Separa o rodapé do conteúdo. */
-    padding: 2px 4px; /* Define o espaçamento interno do rodapé. */
+    padding: 2px 4px; /* Define o espaço interno do rodapé. */
     text-align: center; /* Centraliza o texto do rodapé. */
-    color: #ffffff; /* Define a cor do texto do rodapé como branca. */
-    box-sizing: border-box; /* Inclui bordas e preenchimento no tamanho total do rodapé. */
-    
+    color: #ffffff; /* Exibe o texto em branco. */
+}
+
+/* Desenha o separador usado na página de acesso. */
+.divisor-conteudo {
+    width: 100%; /* Faz o separador ocupar a largura disponível. */
+    border-top: 1px solid rgba(255, 255, 255, 0.6); /* Desenha a linha divisória. */
+}
+
+/* Cria o painel que agrupa o título e as opções de áudio. */
+.musica-container {
+    background-color: #817f84; /* Diferencia a área de música do fundo da página. */
+    padding: 14px 18px; /* Define o espaço interno do painel. */
+    border-radius: 10px; /* Arredonda os cantos do painel. */
+    margin-top: 15px; /* Separa o painel da seção anterior. */
+}
+
+/* Organiza as faixas musicais em três colunas. */
+.lista-musicas {
+    display: grid; /* Ativa o layout em grade. */
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* Cria colunas iguais e evita que os players transbordem. */
+    gap: 12px; /* Espaça os cartões. */
+}
+
+/* Define o visual de cada faixa musical. */
+.faixa-musical {
+    min-width: 0; /* Impede que o cartão ultrapasse sua coluna. */
+    padding: 1px; /* Adiciona espaço interno. */
+    border-radius: 10px; /* Arredonda os cantos do cartão. */
+    background-color: rgba(255, 255, 255, 0.12); /* Destaca o cartão com fundo translúcido. */
+}
+
+/* Mantém os títulos alinhados e compactos. */
+.faixa-musical h4 {
+    min-height: 2.4em; /* Reserva espaço para até duas linhas de título. */
+    margin-bottom: 15px; /* Separa o título do player. */
+    font-size: 0.9rem; /* Ajusta o título ao tamanho do cartão. */
+    line-height: 1.2; /* Aproxima as linhas do título. */
+}
+
+/* Ajusta o player à largura do cartão. */
+.musica-container audio {
+    display: block; /* Remove o espaço extra de elemento em linha. */
+    width: 100%; /* Faz o player preencher o cartão. */
+}
+
+/* Empilha as faixas e reduz o espaço lateral em telas estreitas. */
+@media (max-width: 640px) {
+    .pagina-principal {
+        padding: 24px; /* Reduz o espaço ao redor do conteúdo. */
+        gap: 24px; /* Aproxima as seções. */
+    }
+
+    /* Reduz o espaço interno dos cartões em telas pequenas. */
+    .secao-conteudo {
+        padding: 18px; /* Evita que o conteúdo fique apertado em telas estreitas. */
+    }
+}
+
+/* Separa os títulos do conteúdo em cada cartão do método. */
+.secao-como-funciona h2,
+.secao-regras h2,
+.secao-dicas h2 {
+    margin-bottom: 16px; /* Cria espaço entre o título e a lista. */
+    font-size: 1.4rem; /* Define um tamanho consistente para os títulos. */
+}
+
+/* Alinha as listas e reserva espaço para seus marcadores. */
+.step-list,
+.rules-list,
+.secao-dicas ul {
+    padding-left: 24px; /* Mantém os marcadores dentro do cartão. */
+}
+
+/* Separa os itens para facilitar a leitura das instruções. */
+.step-list li,
+.rules-list li,
+.secao-dicas li {
+    margin-bottom: 12px; /* Cria espaço entre as instruções. */
+}
+
+/* Remove o espaço excedente depois do último item de cada lista. */
+.step-list li:last-child,
+.rules-list li:last-child,
+.secao-dicas li:last-child {
+    margin-bottom: 0; /* Alinha o fim da lista ao espaço interno do cartão. */
+}
+
+/* Destaca os nomes das etapas e regras importantes. */
+.secao-como-funciona strong,
+.secao-regras strong,
+.secao-dicas strong {
+    color: #173b47; /* Diferencia os trechos em negrito do restante do texto. */
+}
+
+/* Define a cor dos títulos dos cartões de conteúdo. */
+.secao-conteudo h2 {
+    color: #173b47;
+}
+
+/* Dá formato comum às seções de conteúdo do FAQ. */
+.secao-conteudo{
+    width: 100%; /* Faz cada seção preencher a largura disponível. */
+    padding: 24px; /* Separa o texto das bordas do cartão. */
+    background-color: rgba(255, 255, 255, 0.12); /* Destaca o cartão sobre o fundo da página. */
+    border-left: 5px solid #2b6c6e; /* Identifica visualmente o início de cada seção. */
+    border-radius: 12px; /* Arredonda os cantos dos cartões. */
+}
+
+/* Espaça os títulos dos cartões de benefícios. */
+.card-beneficio h3 {
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+/* Organiza o título e a resposta de cada categoria do FAQ. */
+.faq-categoria h3 {
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+
+.faq-categoria p {
+    color: #173b47;
+}
+
+/* Centraliza e apresenta o formulário de login como um cartão. */
+.secao-login {
+    width: 100%;
+    max-width: 420px;
+    align-self: center;
+    padding: 24px;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+}
+
+/* Separa e centraliza o título do formulário de login. */
+.secao-login h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Remove a borda padrão e os espaçadores antigos do formulário. */
+.formulario-login fieldset {
+    border: 0;
+}
+
+.formulario-login br {
+    display: none;
+}
+
+/* Organiza visualmente os rótulos dos campos de login. */
+.formulario-login label {
+    display: block;
+    margin: 12px 0 6px;
+}
+
+/* Faz o botão de login ocupar a largura do formulário. */
+.formulario-login button {
+    width: 100%;
+    margin: 16px 0 0;
 }
