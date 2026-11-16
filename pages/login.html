@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso - PomoBrain</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/stylelogin.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <h1 class="titulo-principal"><a href="../index.html">🧠 PomoBrain</a></h1>
+        <nav class="navegacao">
+            <ul class="lista-navegacao">
+                <li><a class="link-navegacao" href="../index.html">Timer</a></li>
+                <li><a class="link-navegacao" href="metodo.html">Como Funciona</a></li>
+                <li><a class="link-navegacao" href="faq.html">Vantagens & FAQ</a></li>
+                <li><a class="link-navegacao" href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pagina-principal">
+        <div class="secao-login auth-box">
+            <h2>Entrar no PomoBrain</h2>
+
+            <form id="form-login" class="form-auth" novalidate>
+                <input type="email" id="email" name="email" placeholder="Seu e-mail" autocomplete="email" required>
+                <input type="password" id="senha" name="senha" placeholder="Sua senha" autocomplete="current-password" required>
+
+                <p id="mensagem-feedback" class="mensagem-feedback" aria-live="polite"></p>
+
+                <button type="submit">Entrar</button>
+            </form>
+
+            <p class="trocar-modo">
+                <span>Não tem conta?</span>
+                <a href="cadastro.html">Criar agora</a>
+            </p>
+        </div>
+    </main>
+
+    <div class="rodape" id="bloco-rodape">
+        <p class="texto-rodape">&copy; 2026 PomoBrain.</p>
+    </div>
+
+    <script src="../assets/js/scriptlogin.js"></script>
+</body>
+</html>

@@ -4,116 +4,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PomoBrain</title>
-    <link rel="stylesheet" href="style.css">
-
+    <title>PomoBrain - Timer</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js" defer></script>
 </head>
 
 <body>
-    <div class="cabecalho" role="banner">
+
+    <!-- Cabeçalho -->
+    <div class="cabecalho" id="bloco-cabecalho">
         <h1 class="titulo-principal">🧠 PomoBrain</h1>
-        <!-- Navegação apontando para os outros arquivos HTML -->
-        <div class="nav" role="navigation" aria-label="Navegação principal">
+
+        <div class="navegacao" id="bloco-navegacao">
             <ul class="lista-navegacao">
-                <li class="item-navegacao"><a class="link-navegacao" href="index.html"
-                        aria-label="Navegação para a página de Timer">Timer</a></li>
-                <li class="item-navegacao"><a class="link-navegacao" href="metodo.html"
-                        aria-label="Navegação para a página 'Como Funciona'">Como Funciona</a></li>
-                <li class="item-navegacao"><a class="link-navegacao" href="faq.html"
-                        aria-label="Navegação para a página 'Vantagens & FAQ'">Vantagens & FAQ</a></li>
-                <li class="item-navegacao"><a class="link-navegacao" href="login.html"
-                        aria-label="Navegação para a página de Login ou Cadastro">Login</a></li>
+                <li class="item-navegacao"><a class="link-navegacao" href="index.html">Timer</a></li>
+                <li class="item-navegacao"><a class="link-navegacao" href="pages/metodo.html">Como Funciona</a></li>
+                <li class="item-navegacao"><a class="link-navegacao" href="pages/faq.html">Vantagens & FAQ</a></li>
+                <li class="item-navegacao"><a class="link-navegacao" href="pages/login.html">Login</a></li>
             </ul>
         </div>
     </div>
-    <div class="pagina-principal" role="main">
+
+    <!-- Conteúdo Principal -->
+    <div class="pagina-principal" id="conteudo-principal">
+
         <!-- Bloco do Cronômetro -->
-        <div class="timer-container secao-timer" role="region" aria-labelledby="titulo-timer">
-            <h2 class="titulo-secao" id="titulo-timer">Mais foco, menos ansiedade.</h2>
+        <!-- Bloco do Cronômetro -->
+        <div class="timer-container" id="bloco-timer">
+            <h2 class="titulo-secao" id="mensagem-texto">Mais foco, menos ansiedade.</h2>
 
-            <div class="modos-pomodoro controles-modo" role="group" aria-label="Escolha o modo do cronômetro">
-                <button id="btn-foco" type="button" data-duracao="25" aria-pressed="true">Foco (25m)</button>
-                <button id="btn-pausa-curta" type="button" data-duracao="5" aria-pressed="false">Pausa Curta (5m)</button>
-                <button id="btn-pausa-longa" type="button" data-duracao="15" aria-pressed="false">Pausa Longa (15m)</button>
+            <!-- Botões de Modos (Foco, Pausa Curta, Pausa Longa) -->
+            <div class="grupo-botoes-modo" id="botoes-modo">
+                <button class="botao-modo" type="button" id="btn-foco">Foco (25m)</button>
+                <button class="botao-modo" type="button" id="btn-curta">Pausa (5m)</button>
+                <button class="botao-modo" type="button" id="btn-longa">Pausa (15m)</button>
             </div>
 
-            <div class="display-tempo" id="tempo" role="timer" aria-label="Tempo restante">25:00</div>
+            <!-- Display do Tempo -->
+            <div class="display-tempo" id="tempo-display">25:00</div>
 
-            <div class="controles controles-timer" role="group" aria-label="Controles do cronômetro">
-                <button id="btn-iniciar" type="button">Iniciar</button>
-                <button id="btn-pausar" type="button">Pausar</button>
-                <button id="btn-zerar" type="button">Zerar</button>
+            <!-- Botão Único de Controle (Iniciar/Pausar) -->
+            <div class="grupo-botoes-controle" id="botoes-controle">
+                <button class="botao-controle" type="button" id="btn-acao">Iniciar</button>
+            </div>
+
+            <!-- Contador de Sessões -->
+            <p class="contador-texto" id="contador-texto">Sessão 1</p>
+
+        </div>
+
+        <!-- Bloco de Tarefas -->
+        <div class="secao-tarefas" id="bloco-tarefas">
+            <h3 class="titulo-secao">Seção de tarefas</h3>
+
+            <div class="container-lista">
+                <ul class="lista-tarefas" id="lista-tarefas">
+
+                    <!-- Os inputs foram agrupados para facilitar o CSS com Flexbox -->
+                    <li class="item-tarefa" data-tarefa-id="1">
+                        <input class="input-tarefa" type="text" placeholder="Digite sua tarefa aqui...">
+                        <input class="checkbox-tarefa" type="checkbox" data-acao="concluir-tarefa">
+                    </li>
+
+                    <li class="item-tarefa" data-tarefa-id="2">
+                        <input class="input-tarefa" type="text" placeholder="Digite sua tarefa aqui...">
+                        <input class="checkbox-tarefa" type="checkbox" data-acao="concluir-tarefa">
+                    </li>
+
+                    <li class="item-tarefa" data-tarefa-id="3">
+                        <input class="input-tarefa" type="text" placeholder="Digite sua tarefa aqui...">
+                        <input class="checkbox-tarefa" type="checkbox" data-acao="concluir-tarefa">
+                    </li>
+                </ul>
             </div>
         </div>
-    <!-- Bloco de Tarefas (Conectado ao modelo lógico TAREFA) -->
-    <!-- Bloco de Tarefas e Histórico -->
-    <div class="secao-tarefas" role="region" aria-labelledby="titulo-tarefas">
-
-        <h3 class="titulo-secao" id="titulo-tarefas"> Seção de Tarefas</h3>
-
-        <ul class="lista-simulada">
-            <li class="linha-tarefa">
-                <input type="text" class="texto-tarefa" placeholder="Digite sua tarefa aqui..."
-                    aria-label="Descrição da tarefa 1">
-                <input type="checkbox" id="t1" aria-label="Marcar tarefa 1 como concluída">
-            </li>
-            <li class="linha-tarefa">
-                <input type="text" class="texto-tarefa" placeholder="Digite sua tarefa aqui..."
-                    aria-label="Descrição da tarefa 2">
-                <input type="checkbox" id="t2" aria-label="Marcar tarefa 2 como concluída">
-            </li>
-            <li class="linha-tarefa">
-                <input type="text" class="texto-tarefa" placeholder="Digite sua tarefa aqui..."
-                    aria-label="Descrição da tarefa 3">
-                <input type="checkbox" id="t3" aria-label="Marcar tarefa 3 como concluída">
-            </li>
-        </ul>
 
     </div>
 
-    <!-- Bloco de Música -->
-    <div class="musica-container secao-musica" role="region" aria-labelledby="titulo-musica">
-        <h3 class="titulo-secao" id="titulo-musica">🎵 Som de Foco</h3>
-
-        <div class="lista-musicas">
-            <div class="faixa-musical">
-                <h4>Chuva para concentração — 30 minutos</h4>
-                <audio controls loop preload="none" aria-label="Ouvir sons de chuva para concentração">
-                    <source src="../musicas/musica1.mp3"
-                        type="audio/mpeg">
-                    Seu navegador não oferece suporte à reprodução de áudio.
-                </audio>
-            </div>
-
-            <div class="faixa-musical">
-                <h4>Beyond Beliefs — Ben Böhmer</h4>
-                <audio controls loop preload="none" aria-label="Ouvir Beyond Beliefs, de Ben Böhmer">
-                    <source
-                        src="../musicas/musica2.mp3"
-                        type="audio/mpeg">
-                    Seu navegador não oferece suporte à reprodução de áudio.
-                </audio>
-            </div>
-
-            <div class="faixa-musical">
-                <h4>Ruído marrom — 30 minutos</h4>
-                <audio controls loop preload="none" aria-label="Ouvir ruído marrom por 30 minutos">
-                    <source
-                        src="../musicas/musica3.mp3"
-                        type="audio/mpeg">
-                    Seu navegador não oferece suporte à reprodução de áudio.
-                </audio>
-            </div>
-        </div>
-    </div>
-
-    </div>
-    <!-- Rodapé da página -->
-    <div class="rodape" role="contentinfo">
+    <!-- Rodapé -->
+    <div class="rodape" id="bloco-rodape">
         <p class="texto-rodape">&copy; 2026 PomoBrain.</p>
     </div>
-
-   
+    <!-- Áudio oculto para o alarme -->
+    <audio id="som-alarme" src="assets/audio/alarme.mp3" preload="auto"></audio>
 </body>
 
 </html>
