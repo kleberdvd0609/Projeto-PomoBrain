@@ -23,6 +23,8 @@ body {
 /* =========================================
    2. ESTRUTURA PRINCIPAL
    ========================================= */
+
+/* Layout da página central, com espaço entre as seções */
 .pagina-principal {
     flex: 1;
     padding: 40px;
@@ -34,6 +36,7 @@ body {
     width: 100%;
 }
 
+/* Cabeçalho fixo visualmente, com alinhamento de logo e navegação */
 .cabecalho {
     background: rgba(8, 10, 59, 0.18);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -49,6 +52,7 @@ body {
     
 }
 
+/* Lista horizontal de links do topo */
 .lista-navegacao {
     list-style: none;
     display: flex;
@@ -56,6 +60,7 @@ body {
     align-items: center;
 }
 
+/* Estilo dos links de navegação e efeito ao passar o mouse */
 .link-navegacao {
     display: block;
     text-decoration: none;
@@ -82,6 +87,8 @@ body {
 /* =========================================
    3. CRONÔMETRO (TIMER)
    ========================================= */
+
+/* Bloco do timer, centralizando texto, botões e display */
 .timer-container {
     display: flex;
     flex-direction: column;
@@ -112,6 +119,7 @@ body {
 }
 
 /* Botões Gerais */
+/* Definição visual padrão para todos os botões do projeto */
 button {
     padding: 10px 20px;
     font-size: 1.3rem;
@@ -136,6 +144,8 @@ button:active {
 /* =========================================
    4. TAREFAS
    ========================================= */
+
+/* Bloco da área de tarefas, com lista e organização vertical */
 .secao-tarefas {
     width: 100%;
 }
@@ -152,6 +162,7 @@ button:active {
     margin-bottom: 10px;
 }
 
+/* Campo para digitar cada tarefa, expandindo e ocupando o espaço disponível */
 .input-tarefa {
     flex: 1;
     padding: 5px;
@@ -184,6 +195,8 @@ button:active {
 /* =========================================
    5. CONTEÚDO (MÉTODO E FAQ)
    ========================================= */
+
+/* Container genérico para páginas de conteúdo explicativo */
 .secao-conteudo {
     max-width: 800px;
     margin: 20px auto; /* Centraliza e dá espaço entre os cards */
@@ -195,6 +208,7 @@ button:active {
     line-height: 1.6;
 }
 
+/* Títulos principais das páginas informativas */
 .titulo-secao-m {
     color: #0b3041;    
     font-size: 1.5rem;
@@ -226,6 +240,7 @@ button:active {
    7. LOGIN
    ========================================= */
 
+/* Formulário de acesso, centralizado com borda discreta */
 .secao-login {
     width: 100%;
     max-width: 400px;
@@ -252,6 +267,8 @@ button:active {
 /* =========================================
    COMPLEMENTO DA SEÇÃO 5 (CARDS DE MÉTODOS)
    ========================================= */
+
+/* Bloco explicativo de passos do método Pomodoro */
 .passo-a-passo {
     background-color: rgba(8, 10, 59, 0.25);
     border-left: 4px solid rgba(255, 255, 255, 0.4);
@@ -265,6 +282,7 @@ button:active {
     margin-top: 12px;
 }
 
+/* Grade de cards com métodos de estudo, responsiva */
 .grade-metodos {
     display: flex;
     flex-wrap: wrap;
@@ -272,6 +290,7 @@ button:active {
     margin-top: 25px;
 }
 
+/* Cada card de método recebe fundo, borda e espaçamento interno */
 .card-metodo {
     flex: 1 1 220px;
     background-color: rgba(8, 10, 59, 0.25);
@@ -288,6 +307,7 @@ button:active {
     color: #e2e8f0;
 }
 
+/* Remove o sublinhado do link do logo e mantém a leitura clara */
 .titulo-principal a{
     text-decoration: none;
     color:#ffffff;
