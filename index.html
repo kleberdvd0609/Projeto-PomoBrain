@@ -11,81 +11,60 @@
 
 <body>
 
-    <!-- Cabeçalho -->
-    <div class="cabecalho" id="bloco-cabecalho">
-        <h1 class="titulo-principal">🧠 PomoBrain</h1>
+    <header class="cabecalho">
+        <h1 class="titulo-principal"><a href="index.html">🧠 PomoBrain</a></h1>
 
-        <div class="navegacao" id="bloco-navegacao">
+        <nav>
             <ul class="lista-navegacao">
-                <li class="item-navegacao"><a class="link-navegacao" href="index.html">Timer</a></li>
-                <li class="item-navegacao"><a class="link-navegacao" href="pages/metodo.html">Como Funciona</a></li>
-                <li class="item-navegacao"><a class="link-navegacao" href="pages/faq.html">Vantagens & FAQ</a></li>
-                <li class="item-navegacao"><a class="link-navegacao" href="pages/login.html">Login</a></li>
+                <li><a class="link-navegacao" href="index.html">Timer</a></li>
+                <li><a class="link-navegacao" href="pages/metodo.html">Como Funciona</a></li>
+                <li><a class="link-navegacao" href="pages/faq.html">Vantagens & FAQ</a></li>
             </ul>
-        </div>
-    </div>
+        </nav>
+    </header>
 
-    <!-- Conteúdo Principal -->
-    <div class="pagina-principal" id="conteudo-principal">
-
-        <!-- Bloco do Cronômetro -->
-        <!-- Bloco do Cronômetro -->
-        <div class="timer-container" id="bloco-timer">
+    <main class="pagina-principal">
+        <div class="timer-container">
             <h2 class="titulo-secao" id="mensagem-texto">Mais foco, menos ansiedade.</h2>
 
-            <!-- Botões de Modos (Foco, Pausa Curta, Pausa Longa) -->
-            <div class="grupo-botoes-modo" id="botoes-modo">
-                <button class="botao-modo" type="button" id="btn-foco">Foco (25m)</button>
+            <div>
+                <button class="botao-modo ativo" type="button" id="btn-foco">Foco (25m)</button>
                 <button class="botao-modo" type="button" id="btn-curta">Pausa (5m)</button>
                 <button class="botao-modo" type="button" id="btn-longa">Pausa (15m)</button>
             </div>
 
-            <!-- Display do Tempo -->
             <div class="display-tempo" id="tempo-display">25:00</div>
 
-            <!-- Botão Único de Controle (Iniciar/Pausar) -->
-            <div class="grupo-botoes-controle" id="botoes-controle">
+            <div>
                 <button class="botao-controle" type="button" id="btn-acao">Iniciar</button>
+                <button class="botao-controle botao-reset" type="button" id="btn-reset">Resetar</button>
             </div>
 
-            <!-- Contador de Sessões -->
-            <p class="contador-texto" id="contador-texto">Sessão 1</p>
-
+            <p class="contador-texto" id="contador-texto">Pomodoros concluídos: 0</p>
         </div>
 
-        <!-- Bloco de Tarefas -->
-        <div class="secao-tarefas" id="bloco-tarefas">
+        <div class="secao-tarefas">
             <h3 class="titulo-secao">Seção de tarefas</h3>
 
-            <div class="container-lista">
-                <ul class="lista-tarefas" id="lista-tarefas">
+            <form class="form-nova-tarefa" id="form-nova-tarefa">
+                <input
+                    class="input-tarefa"
+                    id="input-nova-tarefa"
+                    type="text"
+                    placeholder="Adicione uma tarefa..."
+                    aria-label="Nova tarefa"
+                    maxlength="200"
+                    required>
+                <button class="botao-adicionar" type="submit" aria-label="Adicionar tarefa">+</button>
+            </form>
 
-                    <!-- Os inputs foram agrupados para facilitar o CSS com Flexbox -->
-                    <li class="item-tarefa" data-tarefa-id="1">
-                        <input class="input-tarefa" type="text" placeholder="Digite sua tarefa aqui...">
-                        <input class="checkbox-tarefa" type="checkbox" data-acao="concluir-tarefa">
-                    </li>
-
-                    <li class="item-tarefa" data-tarefa-id="2">
-                        <input class="input-tarefa" type="text" placeholder="Digite sua tarefa aqui...">
-                        <input class="checkbox-tarefa" type="checkbox" data-acao="concluir-tarefa">
-                    </li>
-
-                    <li class="item-tarefa" data-tarefa-id="3">
-                        <input class="input-tarefa" type="text" placeholder="Digite sua tarefa aqui...">
-                        <input class="checkbox-tarefa" type="checkbox" data-acao="concluir-tarefa">
-                    </li>
-                </ul>
-            </div>
+            <ul class="lista-tarefas" id="lista-tarefas"></ul>
         </div>
+    </main>
 
-    </div>
-
-    <!-- Rodapé -->
-    <div class="rodape" id="bloco-rodape">
-        <p class="texto-rodape">&copy; 2026 PomoBrain.</p>
-    </div>
-    <!-- Áudio oculto para o alarme -->
+    <footer class="rodape">
+        <p>&copy; 2026 PomoBrain.</p>
+    </footer>
     <audio id="som-alarme" src="assets/audio/alarme.mp3" preload="auto"></audio>
 </body>
 

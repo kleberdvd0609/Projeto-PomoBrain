@@ -8,58 +8,51 @@
 </head>
 <body>
 
-    <!-- Cabeçalho -->
-    <div class="cabecalho" id="bloco-cabecalho">
+    <header class="cabecalho">
         <h1 class="titulo-principal"><a href="../index.html">🧠 PomoBrain</a></h1>
 
-        <div class="navegacao" id="bloco-navegacao">
+        <nav>
             <ul class="lista-navegacao">
-                <li class="item-navegacao"><a class="link-navegacao" href="../index.html">Timer</a></li>
-                <li class="item-navegacao"><a class="link-navegacao" href="metodo.html">Como Funciona</a></li>
-                <li class="item-navegacao"><a class="link-navegacao" href="faq.html">Vantagens & FAQ</a></li>
-                <li class="item-navegacao"><a class="link-navegacao" href="login.html">Login</a></li>
+                <li><a class="link-navegacao" href="../index.html">Timer</a></li>
+                <li><a class="link-navegacao" href="metodo.html">Como Funciona</a></li>
+                <li><a class="link-navegacao" href="faq.html">Vantagens & FAQ</a></li>
             </ul>
-        </div>
-    </div>
+        </nav>
+    </header>
 
-    <!-- Conteúdo Principal -->
-    <div class="pagina-principal" id="conteudo-principal">
-        
-        <!-- Bloco: Benefícios -->
-        <div class="secao-conteudo secao-beneficios" id="bloco-beneficios">
-            <h2 class="titulo-secao-m ">Benefícios do método Pomodoro</h2>
+    <main class="pagina-principal">
+        <div class="secao-conteudo">
+            <h2 class="titulo-secao-m">Benefícios do método Pomodoro</h2>
             
-            <div class="benefits-grid" id="grade-beneficios">
+            <div class="benefits-grid">
                 
-                <div class="card card-beneficio">
+                <div class="card-beneficio">
                     <h3 class="titulo-card">Comece por uma etapa menor</h3>
-                    <p class="texto-card">Dividir o trabalho em blocos de foco pode tornar mais fácil começar uma tarefa grande.</p>
+                    <p>Dividir o trabalho em blocos de foco pode tornar mais fácil começar uma tarefa grande.</p>
                 </div>
                 
-                <div class="card card-beneficio">
+                <div class="card-beneficio">
                     <h3 class="titulo-card">Intercale foco e descanso</h3>
-                    <p class="texto-card">As pausas planejadas ajudam a criar um ritmo de trabalho mais equilibrado.</p>
+                    <p>As pausas planejadas ajudam a criar um ritmo de trabalho mais equilibrado.</p>
                 </div>
                 
-                <div class="card card-beneficio">
+                <div class="card-beneficio">
                     <h3 class="titulo-card">Planeje melhor as tarefas</h3>
-                    <p class="texto-card">Registrar quantos blocos cada atividade exige pode ajudar a estimar o esforço necessário.</p>
+                    <p>Registrar quantos blocos cada atividade exige pode ajudar a estimar o esforço necessário.</p>
                 </div>
                 
-                <div class="card card-beneficio">
+                <div class="card-beneficio">
                     <h3 class="titulo-card">Reduza as distrações</h3>
-                    <p class="texto-card">Escolher uma tarefa por bloco ajuda a manter a atenção em uma atividade de cada vez.</p>
+                    <p>Escolher uma tarefa por bloco ajuda a manter a atenção em uma atividade de cada vez.</p>
                 </div>
                 
             </div>
         </div>
 
-        <!-- Bloco: FAQ -->
-        <div class="secao-conteudo secao-faq" id="bloco-faq">
+        <div class="secao-conteudo">
             <h2 class="titulo-secao-m">Perguntas Frequentes</h2>
 
-            <!-- Categoria: Cronômetro -->
-            <div class="faq-categoria" id="faq-cronometro">
+            <div class="faq-categoria">
                 <h3 class="titulo-categoria">Cronômetro</h3>
                 
                 <div class="item-faq">
@@ -77,8 +70,7 @@
                 </div>
             </div>
 
-            <!-- Categoria: Tarefas -->
-            <div class="faq-categoria" id="faq-tarefas">
+            <div class="faq-categoria">
                 <h3 class="titulo-categoria">Tarefas</h3>
                 
                 <div class="item-faq">
@@ -91,30 +83,17 @@
                 <div class="item-faq">
                     <details class="detalhe-faq">
                         <summary class="pergunta-faq">Minhas tarefas ficam salvas?</summary>
-                        <p class="resposta-faq">Não. As tarefas são apenas da sessão atual e desaparecem quando você atualiza ou fecha a página.</p>
-                    </details>
-                </div>
-            </div>
-
-            <!-- Categoria: Conta -->
-            <div class="faq-categoria" id="faq-conta">
-                <h3 class="titulo-categoria">Conta</h3>
-                
-                <div class="item-faq">
-                    <details class="detalhe-faq">
-                        <summary class="pergunta-faq">O login salva minhas tarefas ou configurações?</summary>
-                        <p class="resposta-faq">A tela de login ainda não está conectada a um sistema de autenticação ou armazenamento de dados. Por isso, ela não salva tarefas nem configurações.</p>
+                        <p class="resposta-faq">Sim. As tarefas são salvas automaticamente no navegador usando o localStorage.</p>
                     </details>
                 </div>
             </div>
 
         </div>
-    </div>
+    </main>
 
-    <!-- Rodapé -->
-    <div class="rodape" id="bloco-rodape">
-        <p class="texto-rodape">&copy; 2026 PomoBrain.</p>
-    </div>
+    <footer class="rodape">
+        <p>&copy; 2026 PomoBrain.</p>
+    </footer>
 
 </body>
 </html>
